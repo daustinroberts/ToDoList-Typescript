@@ -12,9 +12,10 @@ export class AppComponent {
   month: number = this.currentTime.getMonth() + 1;
   day: number = this.currentTime.getDate();
   year: number = this.currentTime.getFullYear();
-  firstTask: Task = new Task("Finish weekend Angular homework for Epicodus course");
+  // firstTask: Task = new Task("Finish weekend Angular homework for Epicodus course");
+  tasks: Task[] = [
+    new Task('Finish weekend Angular homework for Epicodus course'),
+    new Task('Begin brainstorming possible JavaScript group projects'),
+    new Task('Add README file to last few Angular repos on GitHub')
+  ];
 }
-// export class Task {
-//   public done: boolean = false;
-//   constructor(public description: string) { }
-// }
