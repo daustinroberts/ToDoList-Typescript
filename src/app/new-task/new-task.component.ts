@@ -7,9 +7,10 @@ import { Task } from '../models/task.model';
   styleUrls: ['./new-task.component.css']
 })
 export class NewTaskComponent {
-  @Output() sendTask = new Task(description, priority);
-  submitForm(description: string, priority: number) {
+  @Output() sendTask = new EventEmitter();
+
+  submitForm(description: string, priority: string) {
     let newTask: Task = new Task(description, parseInt(priority));
-    this.sendTask.emit()
+    this.sendTask.emit(newTask);
   }
 }

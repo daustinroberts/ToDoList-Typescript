@@ -2,10 +2,10 @@
 <h1>Welcome, {{userName}}!</h1>
 
 <form>
-  <input [(ngModel)]="userName" type="text" name="user">
+  <input [(ngModel)]="userName" type="text" name="user"/>
 </form>
 <h1>To Do List for {{month}}/{{day}}/{{year}}</h1>
 <h3>{{currentTask}}</h3>
 <app-task-list [childTaskList]="masterTaskList" (clickSender)="editTask($event)"></app-task-list>
 <app-edit-task [childSelectedTask]="selectedTask" (clickedDone)="finishedEditing()"></app-edit-task>
-<app-new-task></app-new-task>
+<app-new-task (sendTask)="addTask($event)"></app-new-task>
